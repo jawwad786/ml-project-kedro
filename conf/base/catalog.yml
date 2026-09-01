@@ -1,0 +1,5 @@
+# Data Catalog
+# See https://docs.kedro.org/en/stable/catalog-data/data_catalog_yaml_examples/
+my_raw_data:
+  type: pandas.ParquetDataset
+  filepath: data/01_raw/raw_data_full.parquet
