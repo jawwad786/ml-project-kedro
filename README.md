@@ -1,8 +1,18 @@
 # bikes_predict
 
+
 [![Powered by Kedro](https://img.shields.io/badge/powered_by-kedro-ffc900?logo=kedro)](https://kedro.org)
 
 ## Overview
+
+This project has been inspired from <LInk>. 
+Several Major cahnges in the Bikes prediciton project:
+
+- Use kedro framwork to better structure 
+- Train multiple model and MLflow added for tracking
+
+
+
 
 This is your new Kedro project, which was generated using `kedro 1.5.0`.
 
