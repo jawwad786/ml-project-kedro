@@ -3,3 +3,9 @@
 my_raw_data:
   type: pandas.ParquetDataset
   filepath: data/01_raw/raw_data_full.parquet
+  versioned: false
+
+model_input_table:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/model_input_table.parquet
+  versioned: false

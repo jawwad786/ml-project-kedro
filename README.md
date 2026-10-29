@@ -8,8 +8,10 @@
 This project has been inspired from <LInk>. 
 Several Major cahnges in the Bikes prediciton project:
 
-- Use kedro framwork to better structure 
-- Train multiple model and MLflow added for tracking
+-  Use kedro framwork to better structure 
+-  dataset version using kedro catalog
+-  Train multiple models
+-  MLflow added for experiment tracking
 
 
 

@@ -1,0 +1,13 @@
+# This is a boilerplate parameters config generated for pipeline 'data_processing'
+# using Kedro 1.5.0.
+#
+# Documentation for this file format can be found in "Parameters"
+# Link: https://docs.kedro.org/en/1.5.0/configuration/parameters.html
+
+drop_columns:
+  - yr
+  - casual
+  - registered
+  - datetime
+
+lags: [1, 2, 3]

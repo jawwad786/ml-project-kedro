@@ -20,6 +20,7 @@ dependencies = [
     "scikit-learn==1.4.0",
     "numpy<2",
     "mlflow>=3.16.1",
+    "kedro-mlflow>=2.0.3",
 ]
 
 [project.scripts]
@@ -92,3 +93,8 @@ ignore = ["E501"]  # Ruff format takes care of line-too-long
 
 [tool.kedro_telemetry]
 project_id = "ca11f7b4e80f4038aaf9a07931457548"
+
+[dependency-groups]
+dev = [
+    "pip>=26.2.1",
+]
