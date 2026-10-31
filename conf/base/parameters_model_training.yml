@@ -1,0 +1,21 @@
+# This is a boilerplate parameters config generated for pipeline 'model_training'
+# using Kedro 1.5.0.
+#
+# Documentation for this file format can be found in "Parameters"
+# Link: https://docs.kedro.org/en/1.5.0/configuration/parameters.html
+
+train_fraction: 0.8
+
+random_forest:
+  model_options:
+    class: sklearn.ensemble.RandomForestRegressor
+    kwargs: {n_estimators: 200, max_depth: 10, random_state: 42}
+
+linear_regression:
+  model_options:
+    class: sklearn.linear_model.LinearRegression
+
+gradient_boosting:
+  model_options:
+    class: sklearn.ensemble.GradientBoostingRegressor
+    kwargs: {n_estimators: 200, learning_rate: 0.01, random_state: 42}

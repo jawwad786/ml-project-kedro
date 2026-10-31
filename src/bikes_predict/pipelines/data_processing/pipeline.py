@@ -4,7 +4,7 @@ generated using Kedro 1.5.0
 """
 
 from kedro.pipeline import node, Pipeline  # noqa
-from .nodes import clean_data, add_features
+from .nodes import clean_data, add_features , create_target
 
 def create_pipeline(**kwargs) -> Pipeline:
     return Pipeline([
@@ -17,7 +17,13 @@ def create_pipeline(**kwargs) -> Pipeline:
         node(
             func = add_features,
             inputs = ["cleaned_data", "params:lags"],
-            outputs="model_input_table",
+            outputs="featured_data",
             name = "add_features_node"
         ),
+        node(
+            func = create_target,
+            inputs = "featured_data",
+            outputs="model_input_table",
+            name = "create_target_node"
+        )
     ])

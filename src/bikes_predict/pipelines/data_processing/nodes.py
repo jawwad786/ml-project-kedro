@@ -32,3 +32,9 @@ def add_features(df: pd.DataFrame, lags: list) -> pd.DataFrame:
     for n in lags:
         df[f"lag_{n}"] = df["cnt"].shift(n).fillna(df["cnt"])
     return df
+
+def create_target(df: pd.DataFrame) -> pd.DataFrame:
+    """Add 'target' = next time step's cnt, then drop cnt."""
+    df = df.copy()
+    df["target"] = df["cnt"].shift(-1).ffill()
+    return df.drop(columns=["cnt"])

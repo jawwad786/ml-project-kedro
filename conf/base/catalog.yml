@@ -9,3 +9,15 @@ model_input_table:
   type: pandas.ParquetDataset
   filepath: data/05_model_input/model_input_table.parquet
   versioned: false
+
+"{name}.regressor":
+  type: kedro_mlflow.io.models.MlflowModelTrackingDataset
+  flavor: mlflow.sklearn
+  save_args:
+    name: "{name}"
+    registered_model_name: "bike-demand-{name}"
+    skops_trusted_types: ["sklearn.tree._tree.Tree"]
+
+"{name}.metrics":
+  type: kedro_mlflow.io.metrics.MlflowMetricsHistoryDataset
+  prefix: "{name}"
