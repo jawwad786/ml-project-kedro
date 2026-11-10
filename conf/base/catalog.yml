@@ -21,3 +21,17 @@ model_input_table:
 "{name}.metrics":
   type: kedro_mlflow.io.metrics.MlflowMetricsHistoryDataset
   prefix: "{name}"
+
+new_raw_data:
+  type: pandas.ParquetDataset
+  filepath: data/01_raw/database.parquet
+
+champion_model:
+  type: kedro_mlflow.io.models.MlflowModelRegistryDataset
+  model_name: bike-demand-random_forest
+  alias: champion
+  flavor: mlflow.sklearn
+
+predictions:
+  type: pandas.ParquetDataset
+  filepath: data/07_model_output/predictions.parquet
